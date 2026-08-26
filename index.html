@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Abdul Rahman — AI Implementation Partner for SMEs & Home Service Businesses</title>
 <meta name="description" content="I build the AI systems and automation that eliminate manual work for roofing, home service, and small businesses — quoting, scheduling, follow-ups, and support, done automatically.">
-<meta name="theme-color" content="#FAF9F5">
+<meta name="theme-color" content="#FFFFFF">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%23D97757'/%3E%3Ctext x='50' y='68' font-size='58' font-family='Georgia,serif' fill='%23FAF9F5' text-anchor='middle'%3EA%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -57,7 +57,7 @@
   /* ---------- NAV ---------- */
   header{
     position:sticky;top:0;z-index:50;
-    background:rgba(250,249,245,0.85);
+    background:rgba(255,255,255,0.85);
     backdrop-filter:blur(10px);
     border-bottom:1px solid var(--border);
   }
@@ -165,27 +165,22 @@
   .mini-steps{display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:6px;}
   .mini-step{font-size:14.5px;color:var(--ink-soft);}
   .mini-step b{color:var(--ink);font-weight:600;}
-  .mini-steps .arrow{margin:0 20px;color:#C9C5B8;}
+  .mini-steps .arrow{margin:0 20px;color:#B7BFC9;}
 
   /* ---------- FINAL CTA ---------- */
   .cta-band{
-    background:var(--ink);color:#FAF9F5;border-radius:28px;
+    background:var(--ink);color:#F5F7FA;border-radius:28px;
     padding:64px 48px;text-align:center;position:relative;overflow:hidden;
   }
-  .cta-band h2{color:#FAF9F5;font-size:clamp(26px,3.6vw,40px);max-width:640px;margin:0 auto 16px;}
-  .cta-band p{color:#C9C6BC;font-size:16.5px;max-width:520px;margin:0 auto 32px;}
+  .cta-band h2{color:#F5F7FA;font-size:clamp(26px,3.6vw,40px);max-width:640px;margin:0 auto 16px;}
+  .cta-band p{color:#A9B2C0;font-size:16.5px;max-width:520px;margin:0 auto 32px;}
   .cta-band .btn-primary{background:var(--accent);}
-  .cta-band .btn-ghost{color:#FAF9F5;border-color:#4A473E;}
-  .cta-band .btn-ghost:hover{background:#333029;}
+  .cta-band .btn-ghost{color:#F5F7FA;border-color:#39445A;}
+  .cta-band .btn-ghost:hover{background:#29334A;}
 
   /* ---------- FOOTER ---------- */
-  footer{padding:48px 0 60px;border-top:1px solid var(--border);}
-  .footer-row{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;}
-  .footer-row .brand{font-size:16px;}
-  footer .foot-links{display:flex;gap:24px;font-size:14.5px;color:var(--ink-soft);}
-  footer .foot-links a{text-decoration:none;}
-  footer .foot-links a:hover{color:var(--ink);}
-  .foot-note{margin-top:24px;font-size:13.5px;color:#9A968A;}
+  footer{padding:28px 0;border-top:1px solid var(--border);}
+  .foot-note{font-size:13.5px;color:#8A93A3;margin:0;text-align:center;}
 
   /* ---------- reveal animation ---------- */
   .reveal{opacity:0;transform:translateY(14px);transition:opacity .6s ease, transform .6s ease;}
@@ -199,7 +194,6 @@
     .cta-band{padding:48px 24px;}
     .hero{padding:64px 0 56px;}
     section{padding:64px 0;}
-    .footer-row{flex-direction:column;align-items:flex-start;}
   }
 </style>
 </head>
@@ -326,14 +320,7 @@
 
 <footer>
   <div class="wrap">
-    <div class="footer-row">
-      <a href="#top" class="brand"><span class="mark">A</span> Abdul Rahman</a>
-      <div class="foot-links">
-        <a href="mailto:devlobb@gmail.com">devlobb@gmail.com</a>
-        <a href="https://github.com/codewithabdulrahman/ai-automation-portfolio">GitHub</a>
-      </div>
-    </div>
-    <p class="foot-note">© <span id="year"></span> Abdul Rahman — AI Implementation Partner. Currently taking on new projects.</p>
+    <p class="foot-note">© <span id="year"></span> Abdul Rahman. Currently taking on new projects.</p>
   </div>
 </footer>
 
@@ -342,8 +329,10 @@
   // Set these once you have scheduling links (Calendly, Cal.com, a Stripe
   // checkout for the paid audit, etc.). Leaving one blank makes its buttons
   // fall back to a mailto: link instead.
-  var FREE_CALL_URL = ""; // e.g. "https://calendly.com/your-name/discovery-call"
-  var AUDIT_URL = "";     // e.g. "https://calendly.com/your-name/system-audit"
+  var FREE_CALL_URL = "https://calendly.com/meet_to_abdulrahman/ai-discovery-call";
+  var AUDIT_URL = "https://calendly.com/meet_to_abdulrahman/ai-discovery-call";
+
+  var EMAIL = 'devlobb@gmail.com';
 
   function wireCta(selector, url, subject){
     document.querySelectorAll(selector).forEach(function(el){
@@ -352,12 +341,25 @@
         el.setAttribute('target', '_blank');
         el.setAttribute('rel', 'noopener');
       } else {
-        el.setAttribute('href', 'mailto:devlobb@gmail.com?subject=' + encodeURIComponent(subject));
+        el.setAttribute('href', 'mailto:' + EMAIL + '?subject=' + encodeURIComponent(subject));
       }
     });
   }
   wireCta('.cta-free', FREE_CALL_URL, "Let's talk about automating my business");
   wireCta('.cta-audit', AUDIT_URL, "I'd like to book the $297 System Audit");
+
+  // --- In-page anchor scrolling ---------------------------------------------
+  // Uses scrollIntoView instead of native hash navigation so links like
+  // "See pricing" and the logo work even in contexts that block anchor
+  // navigation (e.g. some sandboxed previews).
+  document.querySelectorAll('a[href^="#"]').forEach(function(link){
+    var target = document.getElementById(link.getAttribute('href').slice(1));
+    if (!target) return;
+    link.addEventListener('click', function(e){
+      e.preventDefault();
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  });
 
   document.getElementById('year').textContent = new Date().getFullYear();
 

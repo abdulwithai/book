@@ -1,127 +1,81 @@
-# AI Implementation Partner
+# AI Implementation Partner — Landing Page
 
-## I Help Businesses Integrate AI Into Their Workflows
+A lean, trustworthy landing page to convert SME owners, roofing companies, and home service businesses into booked discovery calls and $297 system audits.
 
-I work directly with your team to understand your existing processes, identify where AI creates real value, and build practical, production-grade solutions that actually work.
+## What This Page Does
 
-This isn't consulting or strategy—I implement. I understand your business, design the solution with you, and deliver systems that integrate seamlessly into your operations.
+- **Frames the problem** — Combines pain points with concrete solutions, tailored to roofing, home services, and growing SMEs
+- **Offers two entry points** — A free 30-minute discovery call or a $297 System Audit + Roadmap
+- **Drives to booking** — Every call-to-action button routes to your scheduler (or email fallback)
+- **Builds trust** — Navy and white palette signals "dependable business software," with orange accents on CTAs only
+
+## Page Structure
+
+1. **Hero** — Headline + two CTAs + note about what to expect
+2. **Problem → Fix** — 4 pain/solution pairs showing you understand their workflow
+3. **Packages** — Two clear options to engage
+4. **Steps** — Simple 3-step process (Book → Map → Get plan)
+5. **Final CTA** — Reminder of both options
+6. **Footer** — Contact links
+
+## Configuration
+
+### Set Your Booking Links
+
+Near the bottom of `index.html` (around line 407), you'll see:
+
+```javascript
+var FREE_CALL_URL = ""; // e.g. "https://calendly.com/your-name/discovery-call"
+var AUDIT_URL = "";     // e.g. "https://calendly.com/your-name/system-audit"
+```
+
+- **`FREE_CALL_URL`** — Set this to your Calendly (or Cal.com / Stripe checkout / etc.) link for the free discovery call
+- **`AUDIT_URL`** — Set this to your Calendly event for the $297 audit, or a Stripe checkout if you want to collect payment upfront
+
+Leave them blank to fall back to email (`mailto:` links with pre-filled subjects).
+
+### Customize the $297 Audit Price
+
+If you want a different price, search for `$297` in the HTML and change all three instances (pricing card, final CTA band, and mini-steps text).
+
+### Color Palette
+
+The page uses CSS custom properties in `:root`. To change colors, edit these lines at the top of `<style>`:
+
+- `--bg` — Main background (currently white)
+- `--ink` — Headline/text color (currently navy)
+- `--accent` — CTA buttons and key highlights (currently terracotta)
+
+## What You're Offering
+
+### Discovery Call (Free)
+- 30-minute conversation, no pitch
+- You walk through your current workflow
+- Abdul flags 1–2 automation wins on the spot
+- No obligation
+
+### System Audit + Roadmap ($297)
+- Full audit of your tools and process
+- Written report ranking where you're losing time most
+- Prioritized automation roadmap with effort estimates
+- 45-minute walkthrough call
+- Yours to keep and act on, with or without Abdul's help to build
+
+## Customizing Copy
+
+All text is inline in `index.html`. Key sections to edit:
+
+- **Hero headline & lead** — Lines ~240–242
+- **Problem/Fix cards** — Lines ~303–310
+- **Pricing package descriptions** — Lines ~354–361 and ~368–375
+- **Footer contact info** — Lines ~397–400
+
+The current copy targets roofing, home services, and SMEs. Adjust the verticals or example pain points to match your actual market.
+
+## Tracking & Analytics
+
+This is a static HTML page—add your own analytics by inserting a Google Analytics or Fathom snippet into the `<head>` section.
 
 ---
 
-## What I Do
-
-I help businesses leverage modern AI platforms (primarily Claude and other advanced LLMs) to:
-
-- **Automate Repetitive Processes** — Eliminate manual work through intelligent workflows
-- - **Improve Operations** — Streamline decision-making and reduce bottlenecks
-  - - **Build AI-Powered Solutions** — Custom AI agents, workflow integrations, and business logic
-    - - **Scale Without Overhead** — Accomplish more without proportional increases in team size
-     
-      - ---
-
-      ## My Focus Areas
-
-      ### AI Automation & Workflow Integration
-      - n8n workflow automation connected to AI
-      - - Multi-step business process automation
-        - - AI-driven decision workflows
-          - - Integration with your existing tools (CRM, ERP, Slack, email, databases, APIs)
-           
-            - ### Claude & LLM Implementations
-            - - Claude API integrations for production systems
-              - - AI agents for task automation
-                - - Prompt engineering and optimization
-                  - - Building reliable, deterministic AI behavior
-                   
-                    - ### Custom AI Solutions
-                    - - Specialized applications for your specific workflows
-                      - - Document processing and analysis
-                        - - Data extraction and transformation
-                          - - Knowledge systems and AI-powered search
-                           
-                            - ### Business Process Improvement
-                            - - Identifying automation opportunities in your workflows
-                              - - Designing efficient AI-augmented processes
-                                - - Implementing and testing solutions
-                                  - - Optimizing for reliability and cost
-                                   
-                                    - ---
-
-                                    ## Examples of Problems I Solve
-
-                                    **Customer Support Bottlenecks**
-                                    - Slow response times due to manual ticket sorting
-                                    - - Inconsistent handling of different request types
-                                      - - Agents spending time on repetitive questions
-                                        - - **Solution:** AI system that classifies, routes, and responds to requests automatically, escalating only complex cases to humans
-                                         
-                                          - **Manual Data Processing**
-                                          - - Hours spent daily entering data from emails, forms, and documents
-                                            - - High error rates from manual entry
-                                              - - Inconsistent data structure
-                                                - - **Solution:** Automated pipeline that extracts data, validates it, and pushes it to your systems with zero manual effort
-                                                 
-                                                  - **Decision Workflows**
-                                                  - - Multiple people reviewing the same information
-                                                    - - Slow approval processes
-                                                      - - Inconsistent decision criteria
-                                                        - - **Solution:** AI workflow that evaluates requests against your criteria, highlights risks, and routes appropriately
-                                                         
-                                                          - **Document Management**
-                                                          - - Searching through documents is time-consuming
-                                                            - - Important information gets lost
-                                                              - - Difficulty maintaining knowledge consistency
-                                                                - - **Solution:** AI-powered system that understands your documents and provides instant, accurate answers
-                                                                 
-                                                                  - ---
-
-                                                                  ## How I Work
-
-                                                                  1. **Understand Your Process** — I spend time with your team to map out workflows, identify pain points, and understand constraints
-                                                                 
-                                                                  2. 2. **Design the Solution** — Together, we decide what to automate, how it fits into your existing systems, and what success looks like
-                                                                    
-                                                                     3. 3. **Build & Test** — I develop the solution iteratively, with your feedback shaping the design. You're involved at key milestones
-                                                                       
-                                                                        4. 4. **Deploy & Support** — The system goes into production, I ensure it works as expected, and I'm available for adjustments and improvements
-                                                                          
-                                                                           5. ---
-                                                                          
-                                                                           6. ## My Approach
-                                                                          
-                                                                           7. - **Implementation-focused** — I build working solutions, not presentations or theories
-                                                                              - - **Production-grade** — Systems are designed to be reliable, maintainable, and scalable
-                                                                                - - **Practical** — I solve real problems that matter to your business
-                                                                                  - - **Transparent** — You understand what's being built, how it works, and why it matters
-                                                                                    - - **Adaptable** — Solutions evolve with your needs; I'm not locked into initial designs
-                                                                                     
-                                                                                      - ---
-
-                                                                                      ## Tech Stack & Tools
-
-                                                                                      - **AI Platforms:** Claude, OpenAI, other modern LLMs
-                                                                                      - - **Automation:** n8n, Python, FastAPI, custom backend services
-                                                                                        - - **Integration:** REST APIs, webhooks, direct system connections
-                                                                                          - - **Data:** PostgreSQL, structured storage, vector databases for AI
-                                                                                            - - **Deployment:** Cloud-ready, scalable architecture
-                                                                                             
-                                                                                              - ---
-
-                                                                                              ## Get In Touch
-
-                                                                                              If your business has workflows that are eating up time, opportunities where AI could create value, or challenges that feel unsolvable with current tools—let's talk.
-
-                                                                                              I'm open to:
-                                                                                              - **One-off projects** — Specific automation challenges
-                                                                                              - - **Ongoing partnerships** — Building and refining solutions over time
-                                                                                                - - **Consulting engagements** — Understanding your opportunities and designing the right approach
-                                                                                                 
-                                                                                                  - **Contact:** [Your email or contact method]
-                                                                                                 
-                                                                                                  - **LinkedIn:** [Your LinkedIn profile]
-                                                                                                 
-                                                                                                  - ---
-
-                                                                                                  ## About This Approach
-
-                                                                                                  I focus on implementing practical, real-world AI solutions—not hype. Every system is built for production use, designed to be reliable, and meant to solve actual business problems. If you're looking for someone to build an actual system that improves your operations, let's connect.
+**Ready to go live?** Update the booking URLs, double-check the copy and price, and share the link wherever your customers are.
