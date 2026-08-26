@@ -1,47 +1,374 @@
 <!DOCTYPE html>
-  <html lang="en">
-  <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>AI Implementation Partner - Abdul Rahman</title>
-      <script>
-          // Redirect to README on GitHub Pages
-          window.location.href = 'https://github.com/codewithabdulrahman/ai-automation-portfolio';
-    </script>
-          <style>
-              body {
-                  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            margin: 0;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-}
-        .container {
-                      text-align: center;
-            color: white;
-}
-        h1 {
-                      font-size: 2.5em;
-            margin: 0 0 20px 0;
-}
-        p {
-                      font-size: 1.1em;
-            margin: 10px 0;
-}
-        a {
-                      color: #fff;
-                      text-decoration: underline;
-}
-    </style>
-          </head>
-          <body>
-              <div class="container">
-                  <h1>AI Implementation Partner</h1>
-        <p>I help businesses integrate AI into their workflows.</p>
-                  <p>Redirecting to portfolio...</p>
-                  <p><a href="https://github.com/codewithabdulrahman/ai-automation-portfolio">Click here if not redirected</a></p>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Abdul Rahman — AI Implementation Partner for SMEs & Home Service Businesses</title>
+<meta name="description" content="I build the AI systems and automation that eliminate manual work for roofing, home service, and small businesses — quoting, scheduling, follow-ups, and support, done automatically.">
+<meta name="theme-color" content="#FAF9F5">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%23D97757'/%3E%3Ctext x='50' y='68' font-size='58' font-family='Georgia,serif' fill='%23FAF9F5' text-anchor='middle'%3EA%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#FFFFFF;
+    --bg-alt:#F4F6F8;
+    --card:#FFFFFF;
+    --border:#E3E7EC;
+    --ink:#1B2430;
+    --ink-soft:#5B6472;
+    --chip-bg:#EAEDF2;
+    --chip-text:#33465F;
+    --accent:#D97757;
+    --accent-dark:#BE5E3F;
+    --accent-soft:#F3E3D8;
+    --radius:18px;
+    --maxw:1120px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3{
+    font-family:'Fraunces',Georgia,serif;
+    font-weight:500;
+    letter-spacing:-0.01em;
+    color:var(--ink);
+    margin:0;
+  }
+  a{color:inherit;}
+  img,svg{display:block;max-width:100%;}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px;}
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:8px;
+    font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;
+    color:var(--chip-text);
+    background:var(--chip-bg);
+    padding:6px 14px;border-radius:100px;
+  }
+
+  /* ---------- NAV ---------- */
+  header{
+    position:sticky;top:0;z-index:50;
+    background:rgba(250,249,245,0.85);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--border);
+  }
+  nav.wrap{
+    display:flex;align-items:center;justify-content:space-between;
+    height:72px;
+  }
+  .brand{
+    display:flex;align-items:center;gap:10px;
+    font-family:'Fraunces',serif;font-size:19px;font-weight:600;
+    text-decoration:none;
+  }
+  .brand .mark{
+    width:32px;height:32px;border-radius:9px;background:var(--accent);
+    color:#fff;display:flex;align-items:center;justify-content:center;
+    font-family:'Fraunces',serif;font-size:18px;font-weight:600;
+  }
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:8px;
+    padding:12px 24px;border-radius:100px;
+    font-size:15px;font-weight:600;text-decoration:none;
+    border:1px solid transparent;cursor:pointer;
+    transition:transform .15s ease, box-shadow .15s ease, background .15s ease;
+    white-space:nowrap;
+  }
+  .btn-primary{background:var(--accent);color:#fff;box-shadow:0 1px 2px rgba(190,94,63,.25);}
+  .btn-primary:hover{background:var(--accent-dark);transform:translateY(-1px);}
+  .btn-ghost{background:transparent;color:var(--ink);border-color:var(--border);}
+  .btn-ghost:hover{background:var(--bg-alt);}
+  .btn-sm{padding:9px 18px;font-size:14px;}
+  .nav-cta{display:flex;align-items:center;}
+
+  /* ---------- HERO ---------- */
+  .hero{
+    position:relative;overflow:hidden;
+    padding:96px 0 88px;
+  }
+  .hero-blob{
+    position:absolute;border-radius:50%;filter:blur(70px);opacity:.55;z-index:0;
+  }
+  .blob1{width:420px;height:420px;background:#D9E3F2;top:-160px;right:-120px;}
+  .blob2{width:320px;height:320px;background:#F0EAE0;bottom:-140px;left:-100px;}
+  .hero .wrap{position:relative;z-index:1;}
+  .hero-inner{max-width:760px;}
+  .hero h1{
+    font-size:clamp(34px,5vw,58px);
+    line-height:1.08;
+    margin:22px 0 20px;
+  }
+  .hero h1 em{font-style:italic;color:var(--accent-dark);}
+  .hero p.lead{
+    font-size:19px;color:var(--ink-soft);max-width:600px;margin:0 0 34px;
+  }
+  .hero-ctas{display:flex;gap:14px;flex-wrap:wrap;align-items:center;}
+  .hero-note{margin-top:18px;font-size:14px;color:var(--ink-soft);}
+
+  /* ---------- SECTION SHARED ---------- */
+  section{padding:88px 0;}
+  .section-head{max-width:640px;margin:0 0 48px;}
+  .section-head .eyebrow{margin-bottom:16px;}
+  .section-head h2{font-size:clamp(26px,3.4vw,38px);line-height:1.15;}
+  .section-head p{font-size:17px;color:var(--ink-soft);margin-top:14px;}
+  .alt{background:var(--bg-alt);}
+
+  /* ---------- PROBLEM + FIX ---------- */
+  .fix-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;}
+  .fix-card{
+    background:var(--card);border:1px solid var(--border);border-radius:var(--radius);
+    padding:28px;
+  }
+  .fix-pain{display:flex;gap:10px;align-items:flex-start;margin-bottom:16px;}
+  .fix-pain .x{
+    flex:none;width:22px;height:22px;border-radius:50%;background:var(--chip-bg);color:var(--ink-soft);
+    display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;margin-top:1px;
+  }
+  .fix-pain p{margin:0;font-size:15px;color:var(--ink-soft);}
+  .fix-solution{display:flex;gap:10px;align-items:flex-start;}
+  .fix-solution .check{
+    flex:none;width:22px;height:22px;border-radius:50%;background:var(--accent);color:#fff;
+    display:flex;align-items:center;justify-content:center;font-size:12px;margin-top:1px;
+  }
+  .fix-solution p{margin:0;font-size:15.5px;color:var(--ink);font-weight:500;}
+
+  /* ---------- PRICING ---------- */
+  .pricing-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:52px;}
+  .price-card{
+    background:var(--card);border:1px solid var(--border);border-radius:22px;
+    padding:36px;position:relative;display:flex;flex-direction:column;
+  }
+  .price-card.featured{border-color:var(--accent);box-shadow:0 16px 40px rgba(217,119,87,.14);}
+  .price-badge{
+    position:absolute;top:-13px;right:28px;background:var(--accent);color:#fff;
+    font-size:12px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;
+    padding:5px 14px;border-radius:100px;
+  }
+  .price-name{font-size:13px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--chip-text);margin-bottom:12px;}
+  .price-amount{font-family:'Fraunces',serif;font-size:40px;margin-bottom:8px;}
+  .price-amount span{font-family:'Inter',sans-serif;font-size:15px;color:var(--ink-soft);font-weight:500;}
+  .price-desc{color:var(--ink-soft);font-size:15px;margin:0 0 22px;}
+  .price-features{list-style:none;margin:0 0 28px;padding:0;display:flex;flex-direction:column;gap:12px;flex:1;}
+  .price-features li{display:flex;gap:10px;align-items:flex-start;font-size:14.5px;color:var(--ink);}
+  .price-features li::before{content:"✓";flex:none;color:var(--ink);font-weight:700;}
+  .price-card .btn{width:100%;}
+
+  .mini-steps{display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:6px;}
+  .mini-step{font-size:14.5px;color:var(--ink-soft);}
+  .mini-step b{color:var(--ink);font-weight:600;}
+  .mini-steps .arrow{margin:0 20px;color:#C9C5B8;}
+
+  /* ---------- FINAL CTA ---------- */
+  .cta-band{
+    background:var(--ink);color:#FAF9F5;border-radius:28px;
+    padding:64px 48px;text-align:center;position:relative;overflow:hidden;
+  }
+  .cta-band h2{color:#FAF9F5;font-size:clamp(26px,3.6vw,40px);max-width:640px;margin:0 auto 16px;}
+  .cta-band p{color:#C9C6BC;font-size:16.5px;max-width:520px;margin:0 auto 32px;}
+  .cta-band .btn-primary{background:var(--accent);}
+  .cta-band .btn-ghost{color:#FAF9F5;border-color:#4A473E;}
+  .cta-band .btn-ghost:hover{background:#333029;}
+
+  /* ---------- FOOTER ---------- */
+  footer{padding:48px 0 60px;border-top:1px solid var(--border);}
+  .footer-row{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;}
+  .footer-row .brand{font-size:16px;}
+  footer .foot-links{display:flex;gap:24px;font-size:14.5px;color:var(--ink-soft);}
+  footer .foot-links a{text-decoration:none;}
+  footer .foot-links a:hover{color:var(--ink);}
+  .foot-note{margin-top:24px;font-size:13.5px;color:#9A968A;}
+
+  /* ---------- reveal animation ---------- */
+  .reveal{opacity:0;transform:translateY(14px);transition:opacity .6s ease, transform .6s ease;}
+  .reveal.in{opacity:1;transform:translateY(0);}
+
+  /* ---------- MOBILE ---------- */
+  @media (max-width:860px){
+    .fix-grid,.pricing-grid{grid-template-columns:1fr;}
+    .mini-steps{flex-direction:column;align-items:flex-start;gap:8px;}
+    .mini-steps .arrow{display:none;}
+    .cta-band{padding:48px 24px;}
+    .hero{padding:64px 0 56px;}
+    section{padding:64px 0;}
+    .footer-row{flex-direction:column;align-items:flex-start;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="wrap">
+    <a href="#top" class="brand"><span class="mark">A</span> Abdul Rahman</a>
+    <div class="nav-cta">
+      <a href="#" class="btn btn-primary btn-sm cta-free">Book a Call</a>
     </div>
+  </nav>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-blob blob1"></div>
+    <div class="hero-blob blob2"></div>
+    <div class="wrap">
+      <div class="hero-inner">
+        <span class="eyebrow">AI Implementation Partner</span>
+        <h1>I build the AI systems your business <em>actually</em> runs on — not slide decks.</h1>
+        <p class="lead">I work directly with roofing companies, home service businesses, and growing SMEs to automate the manual work eating up your team's time — quoting, scheduling, follow-ups, and support, handled automatically.</p>
+        <div class="hero-ctas">
+          <a href="#" class="btn btn-primary cta-free">Book a Free Call</a>
+          <a href="#packages" class="btn btn-ghost">See pricing</a>
+        </div>
+        <p class="hero-note">30-minute call · no pitch deck · we talk about your actual workflow</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROBLEM + FIX -->
+  <section id="services" class="alt">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">The Problem → The Fix</span>
+        <h2>Your team is doing by hand what software should be doing — for roofing crews, home service teams, and growing SMEs alike.</h2>
+      </div>
+      <div class="fix-grid">
+        <div class="fix-card reveal">
+          <div class="fix-pain"><span class="x">✕</span><p>Leads sit in an inbox for hours before anyone follows up — and half of them go cold.</p></div>
+          <div class="fix-solution"><span class="check">✓</span><p>An AI agent qualifies and responds to every lead within minutes, day or night.</p></div>
+        </div>
+        <div class="fix-card reveal">
+          <div class="fix-pain"><span class="x">✕</span><p>Quotes and estimates take a full day to put together instead of minutes.</p></div>
+          <div class="fix-solution"><span class="check">✓</span><p>Workflow automation drafts and sends quotes and estimates automatically.</p></div>
+        </div>
+        <div class="fix-card reveal">
+          <div class="fix-pain"><span class="x">✕</span><p>Someone spends hours a week copying data between forms, emails, and spreadsheets.</p></div>
+          <div class="fix-solution"><span class="check">✓</span><p>Documents and forms are read and pushed straight into your systems — zero manual entry.</p></div>
+        </div>
+        <div class="fix-card reveal">
+          <div class="fix-pain"><span class="x">✕</span><p>Customer questions get answered inconsistently, and follow-up calls get missed.</p></div>
+          <div class="fix-solution"><span class="check">✓</span><p>A chat or voice assistant answers consistently and books the call for you.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PACKAGES -->
+  <section id="packages">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">How We Start</span>
+        <h2>Two ways to begin — no long-term commitment either way.</h2>
+        <p>Every engagement starts with one of these two calls, so you know exactly where you stand before spending anything on a build.</p>
+      </div>
+      <div class="pricing-grid">
+        <div class="price-card reveal">
+          <div class="price-name">Discovery Call</div>
+          <div class="price-amount">Free</div>
+          <p class="price-desc">A no-pressure conversation to see if there's a fast automation win worth pursuing.</p>
+          <ul class="price-features">
+            <li>30-minute call, video or phone</li>
+            <li>Walk me through your current workflow</li>
+            <li>I flag 1–2 automation opportunities on the spot</li>
+            <li>No pitch, no obligation</li>
+          </ul>
+          <a href="#" class="btn btn-ghost cta-free">Book a Free Call</a>
+        </div>
+        <div class="price-card featured reveal">
+          <span class="price-badge">Most Thorough</span>
+          <div class="price-name">System Audit + Roadmap</div>
+          <div class="price-amount">$297</div>
+          <p class="price-desc">A deep-dive into your current tools and workflow, so you know exactly what to automate and in what order.</p>
+          <ul class="price-features">
+            <li>Full audit of your current tools & process</li>
+            <li>Written report ranking where you're losing the most time</li>
+            <li>A concrete automation roadmap with effort estimates</li>
+            <li>45-minute walkthrough call to go through it together</li>
+            <li>Yours to keep and act on, with or without me</li>
+          </ul>
+          <a href="#" class="btn btn-primary cta-audit">Book the Audit</a>
+        </div>
+      </div>
+      <div class="mini-steps reveal">
+        <span class="mini-step"><b>1. Book</b> a call above</span>
+        <span class="arrow">→</span>
+        <span class="mini-step"><b>2. Map</b> your workflow together</span>
+        <span class="arrow">→</span>
+        <span class="mini-step"><b>3. Get</b> a clear plan — build it with me or on your own</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section id="contact" class="alt">
+    <div class="wrap">
+      <div class="cta-band reveal">
+        <h2>Ready to see where the time is going?</h2>
+        <p>Start with a free call, or go straight to the $297 audit if you already know you want the full picture.</p>
+        <div class="hero-ctas" style="justify-content:center;">
+          <a href="#" class="btn btn-primary cta-free">Book a Free Call</a>
+          <a href="#" class="btn btn-ghost cta-audit">Book the $297 Audit</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-row">
+      <a href="#top" class="brand"><span class="mark">A</span> Abdul Rahman</a>
+      <div class="foot-links">
+        <a href="mailto:devlobb@gmail.com">devlobb@gmail.com</a>
+        <a href="https://github.com/codewithabdulrahman/ai-automation-portfolio">GitHub</a>
+      </div>
+    </div>
+    <p class="foot-note">© <span id="year"></span> Abdul Rahman — AI Implementation Partner. Currently taking on new projects.</p>
+  </div>
+</footer>
+
+<script>
+  // --- Booking link config -------------------------------------------------
+  // Set these once you have scheduling links (Calendly, Cal.com, a Stripe
+  // checkout for the paid audit, etc.). Leaving one blank makes its buttons
+  // fall back to a mailto: link instead.
+  var FREE_CALL_URL = ""; // e.g. "https://calendly.com/your-name/discovery-call"
+  var AUDIT_URL = "";     // e.g. "https://calendly.com/your-name/system-audit"
+
+  function wireCta(selector, url, subject){
+    document.querySelectorAll(selector).forEach(function(el){
+      if (url) {
+        el.setAttribute('href', url);
+        el.setAttribute('target', '_blank');
+        el.setAttribute('rel', 'noopener');
+      } else {
+        el.setAttribute('href', 'mailto:devlobb@gmail.com?subject=' + encodeURIComponent(subject));
+      }
+    });
+  }
+  wireCta('.cta-free', FREE_CALL_URL, "Let's talk about automating my business");
+  wireCta('.cta-audit', AUDIT_URL, "I'd like to book the $297 System Audit");
+
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // --- Scroll reveal ---------------------------------------------------------
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+    });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+</script>
+
 </body>
 </html>
