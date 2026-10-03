@@ -117,11 +117,11 @@
 <path d="M200 66l4 9 9 1-7 6 2 9-8-5-8 5 2-9-7-6 9-1z" fill="#04140d" transform="translate(0 4)"/>
 <g fill="currentColor" class="pulse"><path d="M318 40l3 8 8 3-8 3-3 8-3-8-8-3 8-3z"/><path d="M82 112l2 5 5 2-5 2-2 5-2-5-5-2 5-2z" opacity=".8"/></g>
 </svg></div>
-      <div class="head"><span class="for">For brands &amp; creators</span></div>
-      <h2>Work With Me</h2>
-      <p class="copy">Have a product, tool, or project you think my audience would find useful?</p>
-      <p class="sub">I’m open to selected brand partnerships, product collaborations, and sponsored content.</p>
-      <a class="btn" id="collab-link" href="#" rel="noopener">Let’s work together →</a>
+      <div class="head"><span class="for">For brands &amp; companies</span></div>
+      <h2>Sponsor a Video</h2>
+      <p class="copy">Want me to feature your product in a video?</p>
+      <p class="sub">I create paid tech &amp; AI content — product demos, reviews, and walkthroughs — for brands that fit my audience.</p>
+      <a class="btn" id="collab-link" href="#" rel="noopener">Request a paid collab →</a>
     </article>
 
   </div>
@@ -135,7 +135,7 @@
 (function(){
   /* ============ CONFIG — fill these in ============ */
   var CONFIG = {
-    PHOTO_URL: "",                         // your headshot (e.g. "me.jpg"); hidden until set
+    PHOTO_URL: "images/me.jpg",                         // your headshot (e.g. "me.jpg"); hidden until set
     EMAIL: "devlobb@gmail.com",            // fallback contact
     HIRE_URL: "https://calendly.com/meet_to_abdulrahman/ai-discovery-call",                          // Upwork profile or Calendly link
     COLLAB_URL: ""                         // optional: media kit / form for brand deals
@@ -163,7 +163,7 @@
   // Tile 2
   var collab = $("#collab-link");
   if(CONFIG.COLLAB_URL){ collab.href = CONFIG.COLLAB_URL; collab.target = "_blank"; }
-  else mailLink(collab, "Brand deal / collab");
+  else mailLink(collab, "Paid video collab inquiry");
 })();
 </script>
 </body>
