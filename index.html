@@ -141,18 +141,25 @@
   var $ = function(s,r){return (r||document).querySelector(s)};
   if(CONFIG.PHOTO_URL){var av=$("#avatar");av.src=CONFIG.PHOTO_URL;av.style.display="block";}
   $("#yr").textContent = new Date().getFullYear();
-  $("#mail").href = "mailto:" + CONFIG.EMAIL;
+  // mailto: does nothing on desktops without a mail app, so use Gmail compose there
+  var mobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+  function mailLink(el, subject){
+    if(mobile){ el.href = "mailto:" + CONFIG.EMAIL + "?subject=" + encodeURIComponent(subject); return; }
+    el.href = "https://mail.google.com/mail/?view=cm&fs=1&to=" + encodeURIComponent(CONFIG.EMAIL) +
+      "&su=" + encodeURIComponent(subject);
+    el.target = "_blank"; el.rel = "noopener";
+  }
+  mailLink($("#mail"), "Hello");
 
   // Tile 1
   var hire = $("#hire-link");
-  hire.href = CONFIG.HIRE_URL ||
-    "mailto:" + CONFIG.EMAIL + "?subject=" + encodeURIComponent("AI systems project");
-  if(CONFIG.HIRE_URL) hire.target = "_blank";
+  if(CONFIG.HIRE_URL){ hire.href = CONFIG.HIRE_URL; hire.target = "_blank"; }
+  else mailLink(hire, "AI systems project");
 
   // Tile 2
   var collab = $("#collab-link");
-  collab.href = CONFIG.COLLAB_URL || "mailto:" + CONFIG.EMAIL + "?subject=" + encodeURIComponent("Brand deal / collab");
-  if(CONFIG.COLLAB_URL) collab.target = "_blank";
+  if(CONFIG.COLLAB_URL){ collab.href = CONFIG.COLLAB_URL; collab.target = "_blank"; }
+  else mailLink(collab, "Brand deal / collab");
 })();
 </script>
 </body>
